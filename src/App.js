@@ -12,12 +12,15 @@ function App() {
       .then(data => setCountries(data))
 
   }, [])
+  const handleAddCountry = (country) => {
+    console.log('Country add ', country);
+  }
   return (
     <div className="App">
       <h1>Countries Loaded:{countries.length}</h1>
       
         {
-          countries.map(country => <Country name={country.name}></Country>)
+          countries.map(country => <Country country={country} handleAddCountry={handleAddCountry} ></Country>)
         }
        
     </div>
